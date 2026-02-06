@@ -1,26 +1,27 @@
-# Face Identification System
+# Hand Gesture Controller
 
-This application identifies faces and detects simple emotions (Happy/Neutral) using your webcam.
+A Python application that uses MediaPipe to detect hand gestures and control your computer (e.g., simulating a steering wheel).
 
 ## Features
-*   **Identity**: Uses LBPH (OpenCV) to learn faces from images.
-*   **Emotion**: Uses "Smile Detection" to differentiate between Neutral and Happy.
-
-## Prerequisites
-1.  **Python** installed.
+- **Gesture Recognition**: Detects 8+ gestures and hand states.
+- **Driving Mode**: Maps gestures to keyboard inputs (Left/Right) for driving games.
+- **High Sensitivity**: Optimized for fast detection.
 
 ## Setup
-1.  Install dependencies:
-    ```bash
-    pip install opencv-contrib-python numpy
-    ```
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+   *(Ensure you have `mediapipe`, `opencv-python`, and `pyautogui` installed)*
 
-2.  **Add Faces** (if you haven't):
-    *   Run `python capture_faces.py` and follow the instructions.
-    *   Or drop photos into the `known_faces` folder.
+2. Download the Model:
+   - The `hand_landmarker.task` file is included in this repository.
 
-## Run
+## Usage
+Run the script:
 ```bash
-python main.py
+python hand_gestures.py
 ```
-*Press 'q' to quit.*
+- **Fist**: Brake (Left Arrow)
+- **Open Hand (5 fingers)**: Gas (Right Arrow)
+- **Press 'q'**: Quit
